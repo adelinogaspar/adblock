@@ -13,8 +13,8 @@ then
         rm /tmp/hosts0
 fi
 
-logger Downloading http://www.mvps.org/winhelp2002/hosts.txt
-wget -O - http://www.mvps.org/winhelp2002/hosts.txt | grep 0.0.0.0 |
+logger Downloading https://raw.githubusercontent.com/adelinogaspar/adblock/master/list.txt
+wget -O - https://raw.githubusercontent.com/adelinogaspar/adblock/master/list.txt | grep 0.0.0.0 |
 	sed 's/[[:space:]]*#.*$//g;' |
 	grep -v localhost | tr ' ' '\t' |
 	tr -s '\t' | tr -d '\015' | sort -u >/tmp/hosts0
